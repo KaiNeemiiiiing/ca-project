@@ -17,4 +17,4 @@
 
   WORKDIR "/usr/src/app"
   # Run the application
-  CMD ["python", "run.py"]
+  CMD ["python", "tests.py"]
