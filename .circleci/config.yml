@@ -9,12 +9,12 @@ jobs:
       - image: busybox:latest
     steps:
       - run:
-          name: Unit Test
+          name: Storing artifacts
           command: 
             echo "Going to run Unit Test"
-            zip -r project.zip .
+            zip -r project1.zip .
       - store_artifacts:
-          path: /home/circleci/project/project.zip
+          path: /home/circleci/project/project1.zip
 
 
   build:
@@ -62,7 +62,7 @@ jobs:
           command: |
             . venv/bin/activate
 #            python manage.py test
-#            zip -r project.zip .
-#      - store_artifacts:
- #         path: /home/circleci/project/project.zip
+            zip -r project2.zip .
+      - store_artifacts:
+          path: /home/circleci/project/project.zip
 
