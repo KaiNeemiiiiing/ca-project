@@ -12,9 +12,9 @@ jobs:
           name: Unit Test
           command: 
             echo "Going to run Unit Test"
-#            zip -r project.zip .
-    #  - store_artifacts:
-     #     path: /home/circleci/project/project.zip
+            zip -r project.zip .
+      - store_artifacts:
+          path: /home/circleci/project/project.zip
 
 
   build:
@@ -62,7 +62,7 @@ jobs:
           command: |
             . venv/bin/activate
 #            python manage.py test
-            zip -r project.zip .
-      - store_artifacts:
-          path: /home/circleci/project/project.zip
+#            zip -r project.zip .
+#      - store_artifacts:
+ #         path: /home/circleci/project/project.zip
 
