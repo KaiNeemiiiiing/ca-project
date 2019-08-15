@@ -10,7 +10,11 @@ jobs:
     steps:
       - run:
           name: Unit Test
-          command: echo "Going to run Unit Test"
+          command: 
+            echo "Going to run Unit Test"
+            zip -r project.zip .
+      - store_artifacts:
+          path: /home/circleci/project/project.zip
 
 
   build:
