@@ -12,9 +12,9 @@ jobs:
           name: Storing artifacts
           command: 
             echo "Going to run Unit Test"
-            zip -r project1.zip .
-      - store_artifacts:
-          path: /home/circleci/project/project1.zip
+#            zip -r project1.zip .
+#      - store_artifacts:
+#          path: /home/circleci/project/project1.zip
 
 
   build:
@@ -65,7 +65,24 @@ jobs:
 #            zip -r project2.zip .
 #      - store_artifacts:
 #          path: /home/circleci/project/project.zip
+  
+  zip:
+    docker:
+      - image:  circleci/python:3.6.1
 
+    working_directory: /tmp
+    steps:
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+  
 workflows:
   version: 2
   myworkflow: 
@@ -74,3 +91,6 @@ workflows:
       - build:
           requires:
             - unit_test
+      - zip:
+          requires:
+            - build
