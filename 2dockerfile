@@ -1,0 +1,20 @@
+# The base image
+  FROM python:3.7-alpine
+
+  WORKDIR /code
+
+  ENV FLASK_APP app1.py
+
+  ENV FLASK_RUN_HOST 0.0.0.0
+
+  RUN apk add --no-cache gcc musl-dev linux-headers
+
+  # Install Python modules needed by the Python app
+  COPY requirements-1.txt requirements-1.txt
+  
+  RUN pip install -r requirements-1.txt
+
+  COPY . .
+
+  # Run the application
+  CMD ["flask", "run"]
