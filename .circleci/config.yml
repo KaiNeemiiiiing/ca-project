@@ -61,7 +61,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-#            python manage.py test
+            python tests.py 
 #            zip -r project2.zip .
 #      - store_artifacts:
 #          path: /home/circleci/project/project.zip
