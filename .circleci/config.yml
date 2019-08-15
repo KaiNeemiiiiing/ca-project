@@ -70,4 +70,4 @@ workflow:
     - unit_test
     - build:
       requires:
-         - unit_test
+        - unit_test
