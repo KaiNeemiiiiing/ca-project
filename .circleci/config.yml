@@ -62,10 +62,7 @@ jobs:
           command: |
             . venv/bin/activate
 #            python manage.py test
-
+            zip -r project.zip .
       - store_artifacts:
-          path: test-reports
-          destination: test-reports
-
-
+          path: /home/circleci/project/project.zip
 
