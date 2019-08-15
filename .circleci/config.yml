@@ -76,7 +76,7 @@ jobs:
           name: Creating Dummy Artifacts
           command: |
             sudo apt-get install zip gzip tar
-            zip -r project1.zip . 
+            zip -r project1.zip . -i .
 
       - persist_to_workspace:
           root: .
