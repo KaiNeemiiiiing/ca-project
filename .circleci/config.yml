@@ -67,8 +67,10 @@ jobs:
 #          path: /home/circleci/project/project.zip
 
 workflows:
-  jobs:
-    - unit_test
-    - build:
-        requires:
-          - unit_test
+  version: 2
+  myworkflow: 
+    jobs:
+      - unit_test
+      - build:
+          requires:
+            - unit_test
