@@ -75,16 +75,16 @@ jobs:
       - run:
           name: Creating Dummy Artifacts
           command: |
-#            zip -r project1.zip .
+            zip -r project1.zip .
 #            echo "my artifact file" > /tmp/artifact-1;
             mkdir /tmp/artifacts;
-            zip -r project1.zip .
-#            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+#            zip -r project1.zip .
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact.zip;
 #            zip -r project1.zip .
 
 
       - store_artifacts:
-          path: /tmp/artifacts/project1.zip
+          path: /tmp/artifacts
           #destination: artifact-file
   
 workflows:
