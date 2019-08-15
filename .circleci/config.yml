@@ -9,8 +9,8 @@ jobs:
       - image: busybox:latest
           steps:
             - run:
-               name: Unit Test
-               command: echo "Going to run Unit Test"
+                name: Unit Test
+                command: echo "Going to run Unit Test"
 
 
   build:
