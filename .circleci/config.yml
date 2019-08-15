@@ -73,13 +73,13 @@ jobs:
     working_directory: /tmp
     steps:
       - run:
-         name: Creating Dummy Artifacts
-         command: |
-           zip -r project1.zip .
+          name: Creating Dummy Artifacts
+          command: |
+            zip -r project1.zip .
 #            echo "my artifact file" > /tmp/artifact-1;
-           mkdir /tmp/artifacts;
+#            mkdir /tmp/artifacts;
 #            zip -r project1.zip .
-           echo "my artifact files in a dir" > /tmp/artifacts/artifact.zip;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact.zip;
 #            zip -r project1.zip .
 
 
