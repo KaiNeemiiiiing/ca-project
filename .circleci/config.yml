@@ -7,10 +7,10 @@ jobs:
   unit_test:
     docker:
       - image: busybox:latest
-          steps:
-            - run:
-                name: Unit Test
-                command: echo "Going to run Unit Test"
+    steps:
+      - run:
+          name: Unit Test
+          command: echo "Going to run Unit Test"
 
 
   build:
