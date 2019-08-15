@@ -66,3 +66,8 @@ jobs:
 #      - store_artifacts:
 #          path: /home/circleci/project/project.zip
 
+workflow:
+    - unit_test
+    - build:
+      requires:
+         - unit_test
